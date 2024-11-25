@@ -1,0 +1,7 @@
+{
+  "name": "VendasApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
