@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gerenciar Produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <!-- Formulário para Adicionar Produto -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Adicionar Produto</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-label position="floating">Nome do Produto</ion-label>
+              <ion-input [(ngModel)]="newProduct.name"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Preço</ion-label>
+              <ion-input type="number" [(ngModel)]="newProduct.value"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Estoque</ion-label>
+              <ion-input type="number" [(ngModel)]="newProduct.stock"></ion-input>
+            </ion-item>
+            <ion-button expand="block" color="primary" (click)="addProduct()">Adicionar Produto</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!-- Listagem de Produtos -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-list>
+          <ion-list-header>
+            <ion-label>Produtos Cadastrados</ion-label>
+          </ion-list-header>
+          <ion-item *ngFor="let product of products">
+            <ion-label>
+              <h2>{{ product.name }}</h2>
+              <p>Preço: R$ {{ product.value }} | Estoque: {{ product.stock }}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
